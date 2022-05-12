@@ -12,6 +12,7 @@ public class ProductDto {
     public String Name;
     public String Type;
     public String Color;
+    public Boolean existsOfProduct;
     public int Amount;
     public double Price;
     public Date date;

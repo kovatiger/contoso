@@ -42,9 +42,10 @@ public class ProductController {
 
     @PostMapping("/products/update")
     public HttpStatus updateProduct(@RequestBody final ProductDto productDto) {
-        if (productDto != null) {
-            Product product = ProductMapper.getProductFromProductDto(productDto);
-            productService.saveProduct(product);
+        Product product = productService.findProductById(productDto.getId());
+        if (productDto != null && product != null) {
+            Product updateProduct = ProductMapper.updateProductByProductDto(product,productDto);
+            productService.saveProduct(updateProduct);
             return HttpStatus.OK;
         } else {
             return HttpStatus.BAD_REQUEST;

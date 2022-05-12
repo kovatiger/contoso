@@ -28,7 +28,7 @@ public class Product {
     @Setter
     private Date date;
     @Setter
-    @Column(name = "exists_of_product")
+    @Column(name = "exists_of_product",columnDefinition = "boolean default true")
     private Boolean existsOfProduct;
     @Setter
     @OneToOne(cascade = CascadeType.ALL)
