@@ -1,6 +1,5 @@
 package app.service.product_service;
 
-import app.entity.Price;
 import app.entity.Product;
 import app.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;

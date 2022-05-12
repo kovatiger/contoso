@@ -11,5 +11,5 @@ public class PriceDto {
     private Long id;
     private String productName;
     private Date date;
-    private double price;
+    private double priceOfProduct;
 }

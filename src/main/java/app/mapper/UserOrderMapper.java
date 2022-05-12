@@ -27,8 +27,12 @@ public class UserOrderMapper {
         return userOrderDtos;
     }
 
-    public static UserOrder getUserOrderFromUserOrderDto(UserOrderDtoToAdd userOrderDtoToAdd) {
-        UserOrder userOrder = new UserOrder();
-        return null;
+    public static UserOrder getUserOrderFromUserOrderDto(UserOrder userOrder, UserOrderDtoToAdd userOrderDtoToAdd) {
+        userOrder.setDate(userOrderDtoToAdd.getDate());
+        userOrder.setAmount(userOrderDtoToAdd.getAmount());
+        userOrder.setPay(userOrderDtoToAdd.getPay());
+        userOrder.setStatus(userOrderDtoToAdd.getStatus());
+        userOrder.setPaymentMethod(userOrderDtoToAdd.getPayMethod());
+        return userOrder;
     }
 }

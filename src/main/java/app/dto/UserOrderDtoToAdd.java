@@ -10,7 +10,7 @@ import java.util.Date;
 public class UserOrderDtoToAdd {
     private int amount;
     private Date date;
-    private boolean pay;
+    private Boolean pay;
     private String payMethod;
     private String status;
     private Long clientId;
