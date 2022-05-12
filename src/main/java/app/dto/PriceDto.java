@@ -9,8 +9,7 @@ import java.util.Date;
 @Setter
 public class PriceDto {
     private Long id;
-    private String name;
-    private String type;
+    private String productName;
     private Date date;
     private double price;
 }

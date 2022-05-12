@@ -5,6 +5,7 @@ import app.entity.Price;
 import app.entity.Product;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class ProductMapper {
@@ -43,6 +44,8 @@ public class ProductMapper {
         product.setName(productDto.getType());
         product.setColor(productDto.getColor());
         product.setAmount(productDto.getAmount());
+        Date date = new Date();
+        product.setDate(date);
         Price price = product.getPriceId();
         price.setPrice(productDto.getPrice());
         product.setPriceId(price);
