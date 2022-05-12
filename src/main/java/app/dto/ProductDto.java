@@ -9,11 +9,11 @@ import java.util.Date;
 @Setter
 public class ProductDto {
     public Long Id;
-    public String Name;
-    public String Type;
-    public String Color;
+    public String name;
+    public String type;
+    public String color;
     public Boolean existsOfProduct;
-    public int Amount;
-    public double Price;
+    public int amount;
+    public double price;
     public Date date;
 }

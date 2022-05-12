@@ -31,7 +31,6 @@ public class ProductMapper {
         product.setName(productDto.getType());
         product.setColor(productDto.getColor());
         product.setAmount(productDto.getAmount());
-        product.setDate(productDto.getDate());
         Price price = new Price();
         price.setPrice(productDto.getPrice());
         price.setDate(productDto.getDate());
@@ -44,11 +43,9 @@ public class ProductMapper {
         product.setProduct(productDto.getName());
         product.setName(productDto.getType());
         product.setColor(productDto.getColor());
-        product.setDate(productDto.getDate());
         product.setAmount(productDto.getAmount());
         Price price = product.getPriceId();
         price.setPrice(productDto.getPrice());
-        price.setDate(productDto.getDate());
         product.setPriceId(price);
         return product;
     }

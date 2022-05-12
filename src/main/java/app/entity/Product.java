@@ -26,6 +26,7 @@ public class Product {
     @Setter
     private Integer amount;
     @Setter
+    @Column(columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private Date date;
     @Setter
     @Column(name = "exists_of_product",columnDefinition = "boolean default true")

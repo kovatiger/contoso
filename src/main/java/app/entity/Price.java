@@ -19,6 +19,7 @@ public class Price {
     @Setter
     private Double price;
     @Setter
+    @Column(columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private Date date;
     @OneToOne(mappedBy = "priceId")
     private Product product;
