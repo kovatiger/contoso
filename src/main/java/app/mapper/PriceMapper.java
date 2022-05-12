@@ -16,7 +16,7 @@ public class PriceMapper {
             PriceDto priceDto = new PriceDto();
             priceDto.setId(product.getPriceId().getId());
             priceDto.setProductName(product.getProduct() + " " + product.getName());
-            priceDto.setPrice(product.getPriceId().getPrice());
+            priceDto.setPriceOfProduct(product.getPriceId().getPrice());
             priceDto.setDate(product.getPriceId().getDate());
             priceDtos.add(priceDto);
         }
@@ -24,7 +24,7 @@ public class PriceMapper {
     }
 
     public static Price getPriceFromPriceDto(PriceDto priceDto, Price price) {
-        price.setPrice(priceDto.getPrice());
+        price.setPrice(priceDto.getPriceOfProduct());
         Date date = new Date();
         price.setDate(date);
         return price;
