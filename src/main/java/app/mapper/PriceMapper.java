@@ -1,6 +1,7 @@
 package app.mapper;
 
 import app.dto.PriceDto;
+import app.entity.Price;
 import app.entity.Product;
 
 import java.util.ArrayList;
@@ -20,5 +21,10 @@ public class PriceMapper {
             priceDtos.add(priceDto);
         }
         return priceDtos;
+    }
+
+    public static Price getPriceFromPriceDto(PriceDto priceDto, Price price) {
+        price.setPrice(priceDto.getPrice());
+        return price;
     }
 }
