@@ -33,7 +33,6 @@ public class ProductMapper {
         product.setAmount(productDto.getAmount());
         Price price = new Price();
         price.setPrice(productDto.getPrice());
-        price.setDate(productDto.getDate());
         product.setPriceId(price);
         return product;
     }

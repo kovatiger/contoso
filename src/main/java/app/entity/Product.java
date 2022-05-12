@@ -26,10 +26,10 @@ public class Product {
     @Setter
     private Integer amount;
     @Setter
-    @Column(columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP",insertable = false)
     private Date date;
     @Setter
-    @Column(name = "exists_of_product",columnDefinition = "boolean default true")
+    @Column(name = "exists_of_product", columnDefinition = "boolean default true",insertable = false)
     private Boolean existsOfProduct;
     @Setter
     @OneToOne(cascade = CascadeType.ALL)
