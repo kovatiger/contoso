@@ -4,6 +4,7 @@ package app.mapper;
 import app.dto.ClientDto;
 import app.entity.Client;
 import app.entity.Product;
+import app.entity.UserOrder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +14,7 @@ public class ClientMapper {
     public static List<ClientDto> getClientDtoFromClient(List<Client> clients) {
         List<ClientDto> clientDtos = new ArrayList<>();
         for (Client client : clients) {
-            if (client.getClientProductList().isEmpty()) {
+            if (client.getUserOrderList().isEmpty()) {
                 ClientDto clientDto = new ClientDto();
                 clientDto.setId(client.getId());
                 clientDto.setNumberOfPhone(client.getTelephone());
@@ -22,14 +23,14 @@ public class ClientMapper {
                 clientDto.setEmail(client.getEmail());
                 clientDtos.add(clientDto);
             } else {
-                for (Product product : client.getClientProductList()) {
+                for (UserOrder userOrder : client.getUserOrderList()) {
                     ClientDto clientDto = new ClientDto();
                     clientDto.setId(client.getId());
                     clientDto.setNumberOfPhone(client.getTelephone());
                     clientDto.setLocation(client.getCity());
                     clientDto.setContactName(client.getName());
                     clientDto.setEmail(client.getEmail());
-                    clientDto.setProductName(product.getProduct() + " " + product.getName());
+                    clientDto.setProductName(userOrder.getProduct().getProduct() + " " + userOrder.getProduct().getName());
                     clientDtos.add(clientDto);
                 }
             }
