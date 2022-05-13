@@ -41,4 +41,16 @@ public class UserOrderController {
             return HttpStatus.BAD_REQUEST;
         }
     }
+
+    @PostMapping("/userOrder/update")
+    public HttpStatus updateUserOrder(@RequestBody final UserOrderDtoToAdd userOrderDtoToAdd) {
+        UserOrder userOrder = userOrderService.findUserOrderById(userOrderDtoToAdd.getId());
+        if (userOrder != null) {
+            UserOrder updateUserOrder = UserOrderMapper.updateProductByProductDto(userOrder,userOrderDtoToAdd);
+            userOrderService.save(updateUserOrder);
+            return HttpStatus.OK;
+        } else {
+            return HttpStatus.BAD_REQUEST;
+        }
+    }
 }

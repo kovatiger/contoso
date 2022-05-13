@@ -8,6 +8,7 @@ import java.util.Date;
 @Getter
 @Setter
 public class UserOrderDtoToAdd {
+    private Long id;
     private int amount;
     private Date date;
     private Boolean pay;

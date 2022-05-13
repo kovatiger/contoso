@@ -13,4 +13,6 @@ public interface UserOrderService {
     UserOrder addClientAndProduct(UserOrderDtoToAdd userOrderDtoToAdd);
 
     void save(UserOrder resultUserOrder);
+
+    UserOrder findUserOrderById(Long id);
 }

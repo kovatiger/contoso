@@ -22,6 +22,11 @@ public class UserOrderServiceImpl implements UserOrderService {
     private ProductRepository productRepository;
 
     @Override
+    public UserOrder findUserOrderById(Long id) {
+        return userOrderRepository.getById(id);
+    }
+
+    @Override
     public void save(UserOrder resultUserOrder) {
         userOrderRepository.save(resultUserOrder);
     }

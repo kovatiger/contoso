@@ -39,4 +39,13 @@ public class UserOrderMapper {
         userOrder.setPaymentMethod(userOrderDtoToAdd.getPayMethod());
         return userOrder;
     }
+
+    public static UserOrder updateProductByProductDto(UserOrder userOrder, UserOrderDtoToAdd userOrderDtoToAdd) {
+        userOrder.setStatus(userOrderDtoToAdd.getStatus());
+        userOrder.setAmount(userOrderDtoToAdd.getAmount());
+        userOrder.setDate(userOrderDtoToAdd.getDate());
+        userOrder.setPaymentMethod(userOrderDtoToAdd.getPayMethod());
+        userOrder.setPay(userOrderDtoToAdd.getPay());
+        return userOrder;
+    }
 }
