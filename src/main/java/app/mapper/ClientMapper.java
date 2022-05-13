@@ -13,15 +13,25 @@ public class ClientMapper {
     public static List<ClientDto> getClientDtoFromClient(List<Client> clients) {
         List<ClientDto> clientDtos = new ArrayList<>();
         for (Client client : clients) {
-            for (Product product : client.getClientProductList()) {
+            if (client.getClientProductList().isEmpty()) {
                 ClientDto clientDto = new ClientDto();
                 clientDto.setId(client.getId());
                 clientDto.setNumberOfPhone(client.getTelephone());
                 clientDto.setLocation(client.getCity());
                 clientDto.setContactName(client.getName());
                 clientDto.setEmail(client.getEmail());
-                clientDto.setProductName(product.getProduct() + " " + product.getName());
                 clientDtos.add(clientDto);
+            } else {
+                for (Product product : client.getClientProductList()) {
+                    ClientDto clientDto = new ClientDto();
+                    clientDto.setId(client.getId());
+                    clientDto.setNumberOfPhone(client.getTelephone());
+                    clientDto.setLocation(client.getCity());
+                    clientDto.setContactName(client.getName());
+                    clientDto.setEmail(client.getEmail());
+                    clientDto.setProductName(product.getProduct() + " " + product.getName());
+                    clientDtos.add(clientDto);
+                }
             }
         }
         return clientDtos;

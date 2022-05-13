@@ -25,7 +25,7 @@ public class Client {
     @Setter
     private String email;
     @Setter
-    @OneToMany(mappedBy = "product")
+    @OneToMany(mappedBy = "client", fetch = FetchType.EAGER)
     private List<Product> clientProductList;
     @Setter
     @OneToMany(mappedBy = "client")
